@@ -33,6 +33,7 @@ VMWare Workstation Pro (personal use) is the best free Virtual Machine available
 1. Go through the VMWare Workstation Pro installation Wizard.
 1. Import the .ova file: `File` --> `Open` --> Find .ova
 1. Select the location to store your virtual machine.
+1. The virtual machine password is `2024`
 
 ### Install VirtualBox
 1. Read 'Using a Virtual Machine'
@@ -44,6 +45,7 @@ VMWare Workstation Pro (personal use) is the best free Virtual Machine available
 1. Change VM settings. The optimal settings will vary by machine.
       1. `System` --> Set your Base Memory, Processors
       1. `Display` --> Disable 3D acceleration, Graphics Controller: VMSVGA  
+1. The virtual machine password is `2024`
 
 ### Using a Virtual Machine
 1. If you use a virtual machine, ESPECIALLY if you are using the POTR176 and ME2038 lab computers, you must back up your work every single session. Virtual machines can potentially corrupt, such as if you do not shut them down properly. Shared lab computers are prone to data loss. You are responsible for backing up your work frequently.
