@@ -5,7 +5,7 @@
 For the first lab, your primary task will be learning what are the different ways ROS 2 nodes can be defined to talk to each other, using the linux terminal. It is suggested to progress through the lab sheets with this recommended pace, but feel free to go faster if you feel so.
 
 #### Words of advice:
-* Whenever you're lost or have a doubt, Google it! Self-help will take you a long way in this course. A list of dependable and trustworthy resources (websites) is [here](https://github.com/naslab-projects/ME597/blob/master/0-Setup/Resources/References.md).
+* Whenever you're lost or have a doubt, Google it! Self-help will take you a long way in this course. A list of dependable and trustworthy resources (websites) is [here](https://github.com/naslab-projects/ME597-Fall2024/blob/main/0-Setup/Resources/References.md).
 * Students who make mistakes AND attempt to correct it will learn way more than those who finish the tasks without any errors/bugs.
 
 # Instructions

@@ -18,7 +18,7 @@ Later on, we will also see just like how Python has many packages, so does ROS2.
     * $`sudo apt install python3-rosdep2`
     * $`sudo apt install python3-pip`
 
-Once you're done setting up Ubuntu 22.04 and ROS 2 Humble, read [this](https://github.com/naslab-projects/ME597/blob/master/0-Setup/Resources/Software_pkg_%26_OS.md) to understand what we have just done till now. 
+Once you're done setting up Ubuntu 22.04 and ROS 2 Humble, read [this](https://github.com/naslab-projects/ME597-Fall2024/blob/main/0-Setup/Resources/Software_pkg_%26_OS.md) to understand what we have just done till now. 
 
 # Simulation Installation guide
 Now we will install the simulation. For this course we will use a simulation of the Turtlebot3. There is a Turtlebot4 simulator available with Gazebo Ignition Fortress simulation software, but it has higher graphics requirements, so we will be using Gazebo Classic 11.10 simulation software, with Turtlebot3 models. Functionally, they will be the same: sensors, topics, etc.
@@ -38,7 +38,7 @@ Now we will install the simulation. For this course we will use a simulation of 
     * To kill any process in the linux terminal, press `Ctrl+c`
 
 
-### Turtlebot3 model installation:
+### Turtlebot3 model installation (Available starting lab 2):
 
 1. Simply save the turtlebot3_gazebo package to a workspace e.g., `~/sim_ws/src/turtlebot3_gazebo`.  You can find it here: [turtlebot3_gazebo](https://github.com/naslab-projects/ME597_Final_project_pkgs_ros2)
 
@@ -54,7 +54,7 @@ Now we will install the simulation. For this course we will use a simulation of 
     ```
 
 ### Using the simulation for lab assignments:
-You will be using this simulation package in future tasks: Lab2, Lab3, Lab4, and Final Project. These will each have their own workspace. How can we use the simulator package, which belongs in its own workspace, in a different workspace? Learn what this means, and how, [on this page](https://github.com/naslab-projects/ME597/blob/master/1-ROS_2_Basics/4-ROS_2_workspaces.md).
+You will be using this simulation package in future tasks: Lab2, Lab3, Lab4, and Final Project. These will each have their own workspace. How can we use the simulator package, which belongs in its own workspace, in a different workspace? Learn what this means, and how, [on this page](https://github.com/naslab-projects/ME597-Fall2024/blob/main/1-ROS_2_Basics/4-ROS_2_workspaces.md).
 
 
 You're now ready to learn and play with ROS 2! Wohoo!
