@@ -64,73 +64,68 @@ VMWare Workstation Pro (personal use) is the best free Virtual Machine available
     1. Since your virtual disk will be saved locally on a computer, if you use a different computer, you will not be able to access that same virtual machine instance.
     1. From the above two points, we highly recommend turning your ros2 workspaces into github repos to quickly and efficiently back up your data. There are many tutorials online and vscode has a useful tab for source control that may be easier to use than the command line interface.
 
-### Using WSL on Windows 11
-1. Download WSL with Ubuntu 22.04
-    1. Option 1: Powershell ([guide link](https://learn.microsoft.com/en-us/windows/wsl/install))
-        1. Open Windows Powershell as Administrator by right clicking on Powershell and click on "Run as Administrator".
+### Using WSL2 on Windows 11
+1. Download WSL2 with Ubuntu 22.04
+    1. Option 1: Powershell ([official guide link](https://learn.microsoft.com/en-us/windows/wsl/install))
+        1. Open Windows Powershell as Administrator by right clicking on Powershell and clicking on ```Run as administrator```.
         2. Inside Powershell run 
-        ```powershell
-        wsl --install -d Ubuntu22.04
-        ```
+            ```powershell
+            wsl --install -d Ubuntu22.04
+            ```
     2. Option 2: Microsoft Store
        1. Open Microsoft Store
        2. Search for Ubuntu 22.04 
        3. Install Ubuntu 22.04.3 LTS
-2. Optional: Configure WSL environment ([Configuring WSL](#https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig)
+2. Optional: Configure WSL environment ([Configuring WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconf))
     1. Navigate to the ```\etc``` directory in WSL.
-    2. Create a file called ```wsl.conf```
-    ```bash
-    nano wsl.conf
-    ```
-    2. Copy these settings into your wsl.conf file
-    ```bash
-    # Automatically mount Windows drive when the distribution is launched
-    [automount]
+    2. Open/create a file called ```wsl.conf```
+        ```bash
+        nano wsl.conf
+        ```
+    2. Copy these settings into the wsl.conf file
+        ```bash
+        [boot]
+        systemd=true
 
-    # Set to true will automount fixed drives (C:/ or D:/) with DrvFs under the root directory set above. Set to false means drives won't be mounted automatically, but need to be mounted manually or with fstab.
-    enabled = true
+        #Add resource limits to WSL2. Configure this based on how many resources you would like WSL2 to have access to on your machine. Make sure these values don't exceed or match your hardware limitations.  
+        [wsl2]
+        memory=4GB
+        processors=2
 
-    # Sets the directory where fixed drives will be automatically mounted. This example changes the mount location, so your C-drive would be /c, rather than the default /mnt/c. 
-    root = /
+        # Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
+        [network]
+        generateHosts = true
+        generateResolvConf =true
 
-    # DrvFs-specific options can be specified.  
-    options = "metadata,uid=1003,gid=1003,umask=077,fmask=11,case=off"
+        # Set whether WSL supports interop processes like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+        [interop]
+        enabled = false
+        appendWindowsPath = false
+        ```
+    3. Go to Windows Powershell and shutdown WSL2 (wait for at least a minute)
+        ```powershell
+        wsl --shutdown
+        ```
 
-    # Sets the `/etc/fstab` file to be processed when a WSL distribution is launched.
-    mountFsTab = true
+    4. Restart WSL2 
+        ```powershell
+        wsl -d <dsitro_name>
+        ```
+        Note: if you don't remember what the name of the linux distribution, or distro, use the following command to show the a list of the WSL distributions that are installed.
+          ```powershell
+          wsl --list
+          ```
 
-    # Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
-    [network]
-    hostname = DemoHost
-    generateHosts = false
-    generateResolvConf = false
-
-    # Set whether WSL supports interop processes like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
-    [interop]
-    enabled = false
-    appendWindowsPath = false
-
-    # Set the user when launching a distribution with WSL.
-    [user]
-    default = DemoUser
-
-    # Set a command to run when a new WSL instance launches. This example starts the Docker container service.
-    [boot]
-    command = service docker start
-    ```
-    3. Go to Windows Powershell and shutdown WSL (wait for at least a minute)
-    ```powershell
-    wsl --shutdown
-    ```
-
-    4. Restart WSL 
-    ```powershell
-    wsl 
-    ```
-
-3. Install Visual Studio Code
-    1. Download VS Code here: https://code.visualstudio.com/Download. Make sure to choose the one that corresponds with your OS. 
+3. Install Visual Studio Code (VS Code)
+    1. Download VS Code here: https://code.visualstudio.com/Download 
     2. Go through installation process. 
-    2. One installation is complete go to "Manage" is the gear icon at the bottom left hand side. Click on it and navigate to which Extensions. You can also use ```Ctrl + Shift + X```
-    3. Type in **```WSL```** and install the WSL extension from Microsoft. This allows the Windows instance of VS Code to interact with the WSL so you can work without solely relying on command line. 
-4. Navigating WSL from Visual Studio
+    2. Once installation is complete, open VS Code, go to "Manage,"  the gear icon at the bottom left-hand side, and click on it. Look for "Extensions" in the drop-down and click it. You can also use macro ```Ctrl + Shift + X```.
+    3. Type in **```WSL```** in the search bar and install the WSL extension from Microsoft. This allows the Windows instance of VS Code to interact with the WSL so you can work without solely relying on command line. 
+4. Opening Folders from WSL2 in Visual Studio Code
+    1. Navigate to ```File``` -> ```Open Folder...```. A drop down navigation bar should appear. Copy the path to your workspace into this bar and hit "Ok".
+        1. If you don't know the full path to the workspace type the linux command ``pwd`` in the workspace directory and it will give you the full path. 
+    2. If a drop down does not appear and Windows File Explorer opens instead type in the follwing to the navigation bar
+        ```
+        \\wsl.localhost\<distro_name>\home\<user-name>
+        ```
+        You can now navigate the WSL instance directory through File Explorer.
