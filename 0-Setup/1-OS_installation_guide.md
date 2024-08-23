@@ -19,8 +19,8 @@ For the entirety of this course, we will be using **Ubuntu 22.04** and **ROS 2 H
   * Upgrade existing Ubuntu version [source](https://ubuntu.com/tutorials/upgrading-ubuntu-desktop#1-before-you-start)
 
 #### Option 3: Install WSL and Visual Studio code on Windows machine:
-  * Using Powershell or Windows Store to install Ubuntu 22.04
-  * Download Visual Studio Code with Remote Explorer
+  * Install Ubuntu 22.04 using Powershell or Windows Store
+  * Install Visual Studio Code with WSL extension.
 
 #### Option 4: Using Ubuntu 22.04 via docker container, for macOS users or any OS users (Advanced):
   * Install docker:
