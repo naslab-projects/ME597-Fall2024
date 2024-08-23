@@ -17,7 +17,12 @@ For the entirety of this course, we will be using **Ubuntu 22.04** and **ROS 2 H
 #### Option 2: Install Ubuntu Natively (harder to setup, but will give best performance):
   * Dual boot- Windows and Ubuntu: [source](https://help.ubuntu.com/community/WindowsDualBoot)
   * Upgrade existing Ubuntu version [source](https://ubuntu.com/tutorials/upgrading-ubuntu-desktop#1-before-you-start)
-#### Option 3: Using Ubuntu 22.04 via docker container, for macOS users or any OS users (Advanced):
+
+#### Option 3: Install WSL and Visual Studio code on Windows machine:
+  * Using Powershell or Windows Store to install Ubuntu 22.04
+  * Download Visual Studio Code with Remote Explorer
+
+#### Option 4: Using Ubuntu 22.04 via docker container, for macOS users or any OS users (Advanced):
   * Install docker:
     * Install docker for macOS. [link](https://docs.docker.com/desktop/install/mac-install/)
     * Install docker for ubuntu. [link](https://docs.docker.com/engine/install/ubuntu/)
@@ -58,3 +63,74 @@ VMWare Workstation Pro (personal use) is the best free Virtual Machine available
     1. Use the C:\temp folder to download your .ova and save your virtual machine to. This is a shared local directory, so it does not have a storage limitation, but it can be deleted by any user.
     1. Since your virtual disk will be saved locally on a computer, if you use a different computer, you will not be able to access that same virtual machine instance.
     1. From the above two points, we highly recommend turning your ros2 workspaces into github repos to quickly and efficiently back up your data. There are many tutorials online and vscode has a useful tab for source control that may be easier to use than the command line interface.
+
+### Using WSL on Windows 11
+1. Download WSL with Ubuntu 22.04
+    1. Option 1: Powershell ([guide link](https://learn.microsoft.com/en-us/windows/wsl/install))
+        1. Open Windows Powershell as Administrator by right clicking on Powershell and click on "Run as Administrator".
+        2. Inside Powershell run 
+        ```powershell
+        wsl --install -d Ubuntu22.04
+        ```
+    2. Option 2: Microsoft Store
+       1. Open Microsoft Store
+       2. Search for Ubuntu 22.04 
+       3. Install Ubuntu 22.04.3 LTS
+2. Optional: Configure WSL environment ([Configuring WSL](#https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconfig)
+    1. Navigate to the ```\etc``` directory in WSL.
+    2. Create a file called ```wsl.conf```
+    ```bash
+    nano wsl.conf
+    ```
+    2. Copy these settings into your wsl.conf file
+    ```bash
+    # Automatically mount Windows drive when the distribution is launched
+    [automount]
+
+    # Set to true will automount fixed drives (C:/ or D:/) with DrvFs under the root directory set above. Set to false means drives won't be mounted automatically, but need to be mounted manually or with fstab.
+    enabled = true
+
+    # Sets the directory where fixed drives will be automatically mounted. This example changes the mount location, so your C-drive would be /c, rather than the default /mnt/c. 
+    root = /
+
+    # DrvFs-specific options can be specified.  
+    options = "metadata,uid=1003,gid=1003,umask=077,fmask=11,case=off"
+
+    # Sets the `/etc/fstab` file to be processed when a WSL distribution is launched.
+    mountFsTab = true
+
+    # Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
+    [network]
+    hostname = DemoHost
+    generateHosts = false
+    generateResolvConf = false
+
+    # Set whether WSL supports interop processes like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+    [interop]
+    enabled = false
+    appendWindowsPath = false
+
+    # Set the user when launching a distribution with WSL.
+    [user]
+    default = DemoUser
+
+    # Set a command to run when a new WSL instance launches. This example starts the Docker container service.
+    [boot]
+    command = service docker start
+    ```
+    3. Go to Windows Powershell and shutdown WSL (wait for at least a minute)
+    ```powershell
+    wsl --shutdown
+    ```
+
+    4. Restart WSL 
+    ```powershell
+    wsl 
+    ```
+
+3. Install Visual Studio Code
+    1. Download VS Code here: https://code.visualstudio.com/Download. Make sure to choose the one that corresponds with your OS. 
+    2. Go through installation process. 
+    2. One installation is complete go to "Manage" is the gear icon at the bottom left hand side. Click on it and navigate to which Extensions. You can also use ```Ctrl + Shift + X```
+    3. Type in **```WSL```** and install the WSL extension from Microsoft. This allows the Windows instance of VS Code to interact with the WSL so you can work without solely relying on command line. 
+4. Navigating WSL from Visual Studio
