@@ -21,7 +21,7 @@ Later on, we will also see just like how Python has many packages, so does ROS2.
 Once you're done setting up Ubuntu 22.04 and ROS 2 Humble, read [this](https://github.com/naslab-projects/ME597-Fall2024/blob/main/0-Setup/Resources/Software_pkg_%26_OS.md) to understand what we have just done till now. 
 
 # Simulation Installation guide
-Now we will install the simulation. For this course we will use a simulation of the Turtlebot3. There is a Turtlebot4 simulator available with Gazebo Ignition Fortress simulation software, but it has higher graphics requirements, so we will be using Gazebo Classic 11.10 simulation software, with Turtlebot3 models. Functionally, they will be the same: sensors, topics, etc.
+Now we will install the simulation. For this course we will use a simulation of the Turtlebot3. There is a Turtlebot4 simulator available with Gazebo Ignition Fortress simulation software, but it has higher graphics requirements, so we will be using Gazebo Classic 11.10 simulation software, with Turtlebot3 models. Functionally, they will be the same: sensors, topics, etc. If you are using a Mac please look at the following link for installation: [Install Gazebo on Mac](https://classic.gazebosim.org/tutorials?tut=install_on_mac&cat=install).
 
 ### Gazebo 11.10 (Classic) simulation software installation:
 1. Execute these commands in the terminal to install Gazebo:
