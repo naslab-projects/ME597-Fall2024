@@ -70,7 +70,7 @@ VMWare Workstation Pro (personal use) is the best free Virtual Machine available
         1. Open Windows Powershell as Administrator by right clicking on Powershell and clicking on ```Run as administrator```.
         2. Inside Powershell run 
             ```powershell
-            wsl --install -d Ubuntu22.04
+            wsl --install -d Ubuntu-22.04
             ```
     2. Option 2: Microsoft Store
        1. Open Microsoft Store
