@@ -60,7 +60,7 @@ Refer to the readings you completed above to complete the tasks:
   3. Pick a frequency between 1 Hz and 20 Hz. Give this script an appropriate name and place it in `task_1/task_1/`
 
 #### Part C: Basic Subscriber
-  4. Write a simple ROS 2 subscriber node in Python, within this pkg, that prints out 2x the quantity of the data received. Give this script an appropriate name and place it in `task_1/task_1/`
+  4. Write a simple ROS 2 subscriber node in Python, within this pkg, that prints out 2x the quantity of the data received. Make sure to print both the original and doubled value in the same message. Please only log the subscriber data for submission. Give this script an appropriate name and place it in `task_1/task_1/`
   5. Run the publisher and subscriber nodes, in different terminals, to verify everything works as intended.
   6. Also verify with these commands:
       * $`ros2 node list`
@@ -69,6 +69,24 @@ Refer to the readings you completed above to complete the tasks:
       * $`ros2 topic echo <topic_name>`
 #### Part D: Launch File
   7. Write a launch file, that starts both the publisher and subscriber node.  Hint: it's just 4 lines of code. Use these: [Creating Launch Files](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Creating-Launch-Files.html) & [Launch System](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Launch-system.html) (follow the Python launch file method). Name this file `pub_sub_launch.py` and place it in `task_1/launch/`. You can create this directory using the `mkdir` command. 
+      - In your ```setup.py```, make sure the following aliases are used for your nodes.
+          - talker := Publisher node
+          - listener := Subscriber node 
+      - Here's an example of my_node.py in the my_py_pkg ROS package being given the alias "my_node". Here a link to the official source: [Customizing package.xml](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html#customize-package-xml)
+        ```python
+        from setuptools import setup
+
+        package_name = 'my_py_pkg'
+
+        setup(
+        ...
+        entry_points={
+            'console_scripts': [
+                    'my_node = my_py_pkg.my_node:main'
+            ],
+          },
+        )
+        ```
   8. Run the launch file to verify everything works as intended.
       * Tip: Lots of bash (including ros2) commands you can tab-complete, this can be helpful for running launch files. Just make sure you've configured your setup.py correctly, built, and sourced your workspace.
 
@@ -133,8 +151,16 @@ Refer to the readings you completed above to complete the tasks:
         * $`ros2 service list`
         * $`ros2 interface show task_2_interfaces/msg/JointData`
 
-#### Part G: Submission
-  10. Comment your code, save your work, record your ros2 bag files, and submit before the start of the next Lab session.
+#### Part G: Launch File
+  10. Write a launch file, that starts the Service node. Name this file `service_launch.py` and place it in `task_2/launch/`. You can create this directory using the `mkdir` command. 
+      - In your ```setup.py``` make sure the following alias are used for your nodes.
+          - service := Service Node
+          - client := Client Node  
+  11. Run the launch file and the client node to verify everything works as intended.
+
+
+#### Part H: Submission
+  12. Comment your code, save your work, record your ros2 bag files, and submit before the start of the next Lab session.
 
 You should be very proud if you have completed all the tasks until here! At this point you should have a good understanding of all the ROS2 fundamentals!
 
