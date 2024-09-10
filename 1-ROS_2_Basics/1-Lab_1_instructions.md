@@ -152,8 +152,9 @@ Refer to the readings you completed above to complete the tasks:
         * $`ros2 interface show task_2_interfaces/msg/JointData`
 
 #### Part G: Launch File
-  10. Write a launch file, that starts the Service node. Name this file `service_launch.py` and place it in `task_2/launch/`. You can create this directory using the `mkdir` command. 
+  10. Write a launch file, that starts the Service and Publisher node. Name this file `service_launch.py` and place it in `task_2/launch/`. You can create this directory using the `mkdir` command. 
       - In your ```setup.py``` make sure the following alias are used for your nodes.
+          - talker := Publisher Node
           - service := Service Node
           - client := Client Node  
   11. Run the launch file and the client node to verify everything works as intended.
