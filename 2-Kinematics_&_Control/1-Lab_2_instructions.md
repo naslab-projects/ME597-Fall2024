@@ -83,12 +83,20 @@ PLEASE NOTE:
 
 #### Part A: Connect to Robot via ROS2 (Group)
 
-1. With your lab partner, ensure you can communicate with the Turtlebot4 via ROS2 on your PC. Follow the instructions here: [5-Turtlebot4_use.md](https://github.com/naslab-projects/ME597-Fall2024/blob/main/2-Kinematics_&_Control/Resources/5-Turtlebot4_use.md). If you have issues, ask for help.
+1. With your lab partner, set up communication with the Turtlebot4 via ROS2 on your PC. Follow the instructions here: [5-Turtlebot4_use.md](https://github.com/naslab-projects/ME597-Fall2024/blob/main/2-Kinematics_&_Control/Resources/5-Turtlebot4_use.md). If you have issues, ask for help.
 
-2. Connect to the Turtlebot4 with your PC via ROS2 (not ssh).
+2. Now that you have connected to the robot with your PC via ROS2 (not ssh), you are able to subscribe and publish to the robot's topics. Run this in your terminal to manually publish to the robot's `/cmd_vel`:
+
+    ```ros2 topic pub /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.0}}"```
 
 #### Part B: PID Implementation on Physical Robot (Group)
-
+3. The Turtlebot3 and Turtlebot4 are very similar, however, there are tw`o small changes you will need to make to convert your code from being used on the Turtlebot3 to the Turtlebot4.
+    1. The `/robot` namespace: You need to modify your publisher and subscriber initializations to use this namespace for their topics.
+      
+        What is a namespace? In general, a namespace simply acts as a prefix for nodes, parameters, topics, and other interfaces in the system. Namespaces are often used to differentiate multiple robot's data on the same network. For example, when you do `ros2 topic list` you may have noticed that all the topics are in the form `/robot/<topicname>`. In this case, they are all in the 'robot' namespace
+    
+        Although namespaces are typically optional, in the current version of the Turtlebot4 software, namespaces are required for it to function properly (for reasons you can ignore). Your robot's namespace was arbitrarily set to 'robot'. Any other string would have worked just as well ('my_robot', 'robot1', 'turtle', etc). Since we chose 'robot', all of the topics have the prefix `/robot`, and you must reflect that in your publisher and subscriber.
+    1. Laserscan angles: In your turtlebot3 simulator implementation, you used a specific index of the 'ranges' attribute - `ranges[index]`. The forward facing index is different for the Turtlebot3 and the Turtlebot4. For the Turtlebot4, you can either determine it from these resources: [RPLidar Frame](https://github.com/allenh1/rplidar_ros/blob/ros2/rplidar_A1.png) & [Laserscan message definition](http://docs.ros.org/en/api/sensor_msgs/html/msg/LaserScan.html); or trial and error.
 3. Run your PID node on your PC to control the Turtlebot4.
 4. Record a video of your PID code running on the robot and submit it on Gradescope.
 
@@ -98,7 +106,7 @@ PLEASE NOTE:
 ### Deliverables
 Each of the 3 deliverables will have a separate submission:
 #### 1. Kinematics Derivation
-* Solution to the inverse kinematics derivation problem. May be handwritten or there will be a separate submission for this on Gradescope.
+* Solution to the inverse kinematics derivation problem. May be handwritten. There will be a separate submission for this on Gradescope.
 
 #### 2. Source code
 Please Note: All individuals must have unique PID source code for the simulation assignment.
@@ -117,8 +125,6 @@ ros2 bag files
 
 ros2 log files
 * Upload `<ws_ros2>/log/` too
-
-
 
 #### 3. Video of Physical Robot Implementation
 Partners may submit the same video, however, both partners must submit a video. You do not need to make a source code submission for the physical robot implementation. There is no late submission for this assignment.

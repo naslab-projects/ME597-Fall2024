@@ -33,6 +33,7 @@ Now we will install the simulation. For this course we will use a simulation of 
     * If you get an error in this step, reboot the system
     * $`gazebo --verbose /opt/ros/humble/share/gazebo_plugins/worlds/gazebo_ros_diff_drive_demo.world`
     * The Gazebo world along with a bot should have been loaded and rendered
+    * If you are using a VM and the gazebo window displays a black screen, shut down the VM and turn off 3D acceleration in the VM graphics settings. Load the VM and retry.
     * $`ros2 topic pub /demo/cmd_demo geometry_msgs/msg/Twist '{linear: {x: 1.0}}' -1`
     * You should see the bot move in the Gazebo world
     * To kill any process in the linux terminal, press `Ctrl+c`
