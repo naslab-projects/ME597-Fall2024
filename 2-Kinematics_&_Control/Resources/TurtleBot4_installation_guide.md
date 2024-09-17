@@ -3,3 +3,4 @@
 2. Simulator was installed during [0-Setup/2-ROS_2_installation_guide.md](https://github.com/naslab-projects/ME597-Fall2024/blob/main/0-Setup/2-ROS_2_installation_guide.md#gazebo-1110-classic-simulation-software-installation). Do that if you have not done so already.
 3. The Turtlebot3 model is now available for install, do that now. Instructions are also in [0-Setup/2-ROS_2_installation_guide.md](https://github.com/naslab-projects/ME597-Fall2024/blob/main/0-Setup/2-ROS_2_installation_guide.md#gazebo-1110-classic-simulation-software-installation)
 4. Mac users will need to use Gazebo Ignition with Turtlebot4. Instructions can be found in the turtlebot4 manual: [Turtlebot4 simulator](https://turtlebot.github.io/turtlebot4-user-manual/software/turtlebot4_simulator.html)
+    - When using the Turtlebot4, turn on safety overrides to allow the robot to back up: [create3 safety overrides](https://iroboteducation.github.io/create3_docs/api/safety/)
