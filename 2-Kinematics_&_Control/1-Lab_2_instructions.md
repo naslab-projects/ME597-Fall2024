@@ -39,6 +39,9 @@ PLEASE NOTE:
 #### Part A: Creating the Package and Node
 1. Create a ROS 2 `ament_python` package called `task_3`
 2. Create a simple Python node within this pkg, called `pid_controller.py`
+3. Create a launch file called ```pid_control_launch.py``` that launches your pid controller node, place it in task_3/launch/ and configure setup.py to access that launch file. 
+4. Setup up the following alias in setup.py
+    - pid_speed_controller := PID Controller Node
 #### Part B: Subscribe to the `/scan` topic
 3. Create a subscriber that reads the `/scan` topic. 
     - Set the rate to 10Hz to define the execution speed of your node. You can tune this parameter - however, setting it too high will cause unnecessary load.
@@ -114,7 +117,7 @@ Please Note: All individuals must have unique PID source code for the simulation
 Your ROS 2 package:
   * `task_3`- PID controller to help the TurtleBot4 stop 0.35 m from an obstacle
 
-ros2 bag files
+ros2 bag files:
 * You will 'record' the data passing through your topics via `ros2 bag`:
   * in any directory outside from your workspace directory, run:
     * $`mkdir bag_files`
@@ -123,8 +126,28 @@ ros2 bag files
   * NOTE: your topic must be alive for ros2 to record it
   * Use this as [reference](https://docs.ros.org/en/galactic/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
 
-ros2 log files
+ros2 log files:
 * Upload `<ws_ros2>/log/` too
+
+Your folder structure should be as such:
+
+```
+42
+|
+|__bag_files
+|     |__task_3
+|         |__metadata.yaml
+|         |__task_3_0.db3
+|            
+|__task_3
+|     |__launch
+|     |__resource
+|     |__...
+|     
+|__log
+```
+
+Where 42 must be replaced with your roll-number.
 
 #### 3. Video of Physical Robot Implementation
 Partners may submit the same video, however, both partners must submit a video. You do not need to make a source code submission for the physical robot implementation. There is no late submission for this assignment.
