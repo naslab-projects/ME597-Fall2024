@@ -4,9 +4,9 @@
 
 ### Learning materials
 1. Comparison of a single C++ source code to a C++ project. 
-   1. Follow the short demos in the [Resources Folder](https://github.com/naslab-projects/ME597-Fall2024/tree/main/1-ROS_2_Basics/Resources/1-Lecture)
+   1. Follow the short demos in the [Resources Folder](Resources/1-Lecture)
 
-2. Understanding workspaces: [4-ROS_2_workspaces.md](https://github.com/naslab-projects/ME597-Fall2024/blob/main/1-ROS_2_Basics/4-ROS_2_workspaces.md)
+2. Understanding workspaces: [4-ROS_2_workspaces.md](4-ROS_2_workspaces.md)
    1. Bash Environment
    2. Sourcing a Workspace
    3. Workspace Architecture

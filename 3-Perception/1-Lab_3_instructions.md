@@ -12,7 +12,7 @@ Although it does not have native support to inteface directly with ROS 2, `cvbri
 In this lab you will gain experience with a foundational computer vision library, OpenCV, and implement your computer vision algorithm to autonomously control a robot.
 
 #### Words of advice:
-* Whenever you're lost or have a doubt, Google it! Self-help will take you a long way in this course. A list of dependable and trustworthy resources (websites) is [here](https://github.com/naslab-projects/ME597/blob/master/0-Setup/Resources/References.md).
+* Whenever you're lost or have a doubt, Google it! Self-help will take you a long way in this course. A list of dependable and trustworthy resources (websites) is [here](../0-Setup/Resources/References.md).
 * Students who make mistakes AND attempt to correct it will learn way more than those who finish the tasks without any errors/bugs.
 
 

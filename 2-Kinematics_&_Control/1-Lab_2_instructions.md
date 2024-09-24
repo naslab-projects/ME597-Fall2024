@@ -6,7 +6,7 @@ For the second lab, your primary task will be learning how to control the kinema
 
 
 #### Words of advice:
-* Whenever you're lost or have a doubt, Google it! Self-help will take you a long way in this course. A list of dependable and trustworthy resources (websites) is [here](https://github.com/naslab-projects/ME597-Fall2024/blob/main/0-Setup/Resources/References.md).
+* Whenever you're lost or have a doubt, Google it! Self-help will take you a long way in this course. A list of dependable and trustworthy resources (websites) is [here](../0-Setup/Resources/References.md).
 * Students who make mistakes AND attempt to correct it will learn way more than those who finish the tasks without any errors/bugs.
 
 # Instructions
@@ -17,7 +17,7 @@ This week you will implement a PID controller in simulation. You will use what y
 ## Week 4
 ### Reading (20 min)
 First, we need to prepare for the simulator:  
-1. Setup TurtleBot4 packages - find the instructions [here](https://github.com/naslab-projects/ME597-Fall2024/blob/main/2-Kinematics_%26_Control/Resources/TurtleBot4_installation_guide.md)
+1. Setup TurtleBot4 packages - find the instructions [here](Resources/TurtleBot4_installation_guide.md)
 2. Familiarize yourself with the TurtleBot4 Simulator
 
 Next, we will take a look at the physical Turtlebot4, used next week (Week 5): 
@@ -86,7 +86,7 @@ PLEASE NOTE:
 
 #### Part A: Connect to Robot via ROS2 (Group)
 
-1. With your lab partner, set up communication with the Turtlebot4 via ROS2 on your PC. Follow the instructions here: [5-Turtlebot4_use.md](https://github.com/naslab-projects/ME597-Fall2024/blob/main/2-Kinematics_&_Control/Resources/5-Turtlebot4_use.md). If you have issues, ask for help.
+1. With your lab partner, set up communication with the Turtlebot4 via ROS2 on your PC. Follow the instructions here: [5-Turtlebot4_use.md](Resources/5-Turtlebot4_use.md). If you have issues, ask for help.
 
 2. Now that you have connected to the robot with your PC via ROS2 (not ssh), you are able to subscribe and publish to the robot's topics. Run this in your terminal to manually publish to the robot's `/cmd_vel`:
 

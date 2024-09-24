@@ -21,4 +21,4 @@ And there you have it, you have manually compiled a cpp program into an executab
 Note: an executable is also a binary because executables are essentially machine code or binary code that the host machine understands.
     
 
-But this is not a scalable option. If you want to compile multiple cpp programs and put them into a single executable file, we need to use something called a build system. Go to [Demo 2](https://github.com/naslab-projects/ME597-Fall2024/tree/main/1-ROS_2_Basics/Resources/1-Lecture/Demo_2) to learn more.
+But this is not a scalable option. If you want to compile multiple cpp programs and put them into a single executable file, we need to use something called a build system. Go to [Demo 2](../Demo_2) to learn more.
