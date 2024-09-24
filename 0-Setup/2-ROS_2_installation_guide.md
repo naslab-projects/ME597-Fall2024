@@ -40,18 +40,12 @@ Now we will install the simulation. For this course we will use a simulation of 
 
 
 ### Turtlebot3 model installation:
-You can find the package here: [turtlebot3_gazebo](https://github.com/naslab-projects/ME597-Fall2024-tb3-gz)
+You can find the simulation workspace here: [sim_ws](https://github.com/naslab-projects/sim_ws)
 
-1. Simply save the turtlebot3_gazebo package to a workspace e.g., 
+1. Simply save this workspace e.g., 
     ```
-    cd ~/ros2
-    mkdir -p sim_ws/src
-    cd sim_ws/src
-    git clone https://github.com/naslab-projects/ME597-Fall2024-tb3-gz.git
-    ```
-    Rename the package to `turtlebot3_gazebo`
-    ```
-    mv ME597-Fall2024-tb3-gz turtlebot3_gazebo
+    cd ~/ros2 # cd into the dir you want to keep this workspace in
+    git clone https://github.com/naslab-projects/sim_ws.git
     ```
 
 2. In a new terminal build the sim_ws workspace: 
@@ -70,6 +64,11 @@ You can find the package here: [turtlebot3_gazebo](https://github.com/naslab-pro
     sudo apt install ros-humble-slam-toolbox
     sudo apt install ros-humble-navigation2
     ```
+    
+    ```
+    pip install pynput
+    ```
+
 5. Don't forget to source the workspace whenever you use it
     ```
     cd sim_ws
@@ -77,7 +76,7 @@ You can find the package here: [turtlebot3_gazebo](https://github.com/naslab-pro
     ```
 
 ### Using the simulation for lab assignments:
-You will be using this simulation package in future tasks: Lab2, Lab3, Lab4, and Final Project. These will each have their own workspace. How can we use the simulator package, which belongs in its own workspace, in a different workspace? Learn what this means, and how, [on this page](https://github.com/naslab-projects/ME597/blob/master/1-ROS_2_Basics/4-ROS_2_workspaces.md).
+You will be using this simulation package in future tasks: Lab2, Lab3, Lab4, and Final Project. These will each have their own workspace. How can we use the simulator package, which belongs in its own workspace, in a different workspace? Learn what this means, and how, [on this page](https://github.com/naslab-projects/ME597-Fall2024/blob/main/1-ROS_2_Basics/4-ROS_2_workspaces.md).
 
 
 You're now ready to learn and play with ROS 2! Wohoo!

@@ -43,28 +43,28 @@ PLEASE NOTE:
 4. Setup up the following alias in setup.py
     - pid_speed_controller := PID Controller Node
 #### Part B: Subscribe to the `/scan` topic
-3. Create a subscriber that reads the `/scan` topic. 
+5. Create a subscriber that reads the `/scan` topic. 
     - Set the rate to 10Hz to define the execution speed of your node. You can tune this parameter - however, setting it too high will cause unnecessary load.
-4. Get the forward-facing distance reading from lidar.
+6. Get the forward-facing distance reading from lidar.
     - Check out the `sensor_msgs/LaserScan.msg` [message definition](http://docs.ros.org/en/api/sensor_msgs/html/msg/LaserScan.html). 
     - hint: you will want to use the `float32[] ranges` attribute, which is a list of range values, and for the Turtlebot3 these correspond to:
       
       <img src='Resources/images/TB3_laserscan.png' alt='TB3_laserscan.png' width=1000/>
 
 #### Part C: Calculate the PID Controller
-4. In the callback function, use forward distance measured from the lidar sensor as input to a PID controller to control the velocity.
+7. In the callback function, use forward distance measured from the lidar sensor as input to a PID controller to control the velocity.
     - Set the target distance to 0.35 m.
     - Tune your `Kp`, `Ki`, and `Kd` values as you wish.
 
 
 #### Part D: Publish to the `/cmd_vel` topic
-5. In the same node file, create a publisher that writes to the `/cmd_vel` topic to move the robot. [Reference](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/driving.html#command-velocity)
+8. In the same node file, create a publisher that writes to the `/cmd_vel` topic to move the robot. [Reference](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/driving.html#command-velocity)
     - The upper bound for `linear.x` must be 0.15 m/s and the lower bound for `linear.x` must be 0 m/s.
     - See the `geometry_msgs/Twist` [message definition](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/Twist.html)
 
 
 #### Part E: Verification
-6. Complete the relevant tag details in the `package.xml` file, build and run the ROS 2 node along with gazebo.
+9. Complete the relevant tag details in the `package.xml` file, build and run the ROS 2 node along with gazebo.
 
     - Launch the world and spawn a turtlebot3 using:
       ```
@@ -75,7 +75,7 @@ PLEASE NOTE:
       source ~/path/to/sim_ws/install/local_setup.bash
       ```
 
-7. You may also verify with these commands:
+10. You may also verify with these commands:
     * $`ros2 node list`
     * $`ros2 topic list`
     * $`ros2 node info <node_name>`
