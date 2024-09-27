@@ -57,6 +57,8 @@ Task_6:
     * Subscribe to the `/video_data` topic.
     * Print the x and y position of the centroid of a detected object, relative to the top left corner of the frame (e.g.- top left is (0,0), bottom right is (w,h)), in pixels.
     * Print the width and height of the detected object, in pixels.
+    * Publish to a topic called `/bbox` of type `/vision_msgs/BoundingBox2D`. Reference the [message definition source code](https://github.com/ros-perception/vision_msgs/blob/ros2/vision_msgs/msg/BoundingBox2D.msg)
+       * You may also do: `ros2 interface show vision_msgs/msg/BoundingBox2D` to see the definition.
     * Draw a rectangle (called a bounding box) around the detected object.
     * Display the edited video feed with bounding box in a new cv2 window.
 1. To do this:
