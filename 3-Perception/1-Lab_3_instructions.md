@@ -21,12 +21,12 @@ For the third lab, your primary task will be learning image processing technique
 As part of this laboratory, you will utilize some algorithms for the robot to detect a moving object using the camera and to follow the object. 
 This will allow the system to have a position reference system on top of which we can perform some control tasks. Specifically, you will complete 4 sub-tasks: 
 
-Task_5:
+Task_4:
 1. Image Publisher from recorded video
 2. Image Subscriber and image processing
 3. Object Detection Algorithm
 
-Task_6:
+Task_5:
 
 4. Object Tracking Robot Control Algorithm
 
@@ -38,7 +38,7 @@ Task_6:
 
 
 ### Tasks (2 hr)
-`task_5`- Image data publisher and image processing subscriber
+`task_4`- Image data publisher and image processing subscriber
 * Refer to the 'Playing Video from file' section from [OpenCV Docs - Getting Started with Videos](https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html)
 * Use this resource for useful commands: [OpenCV_ROS2.md](Resources/OpenCV_ROS2.md)
 
@@ -86,7 +86,7 @@ This week you will control your robot in simulation to follow a red ball.
 ### Tasks (2 hr)
 
 #### Part C: Track Red Ball
-1. Create a ROS 2 `ament_python` package called `task_6`
+1. Create a ROS 2 `ament_python` package called `task_5`
 2. Create an object tracker node for a red ball, called `red_ball_tracker.py`.
 3. This node should subscribe to the robot's camera data, detect the ball, and publish wheel velocities to follow the ball.
 4. The robot should have the following behavior:
@@ -145,7 +145,7 @@ Where XX must be replaced with your roll-number.
 ### Rubric
 Deviating from the names provided in the lab sheet will result in penalties.
 * 5  pts: Correct node aliases.
-* 20 pts: Week 6, Part A, `task_5` pkg
-* 35 pts: Week 6, Part B, `task_5` pkg
-* 40 pts: Week 7, Part C, `task_6` pkg
-* +20 pts: Week 7, Part D, `task_6` pkg - Extra Credit
+* 20 pts: Week 6, Part A, `task_4` pkg
+* 35 pts: Week 6, Part B, `task_4` pkg
+* 40 pts: Week 7, Part C, `task_5` pkg
+* +20 pts: Week 7, Part D, `task_5` pkg - Extra Credit
