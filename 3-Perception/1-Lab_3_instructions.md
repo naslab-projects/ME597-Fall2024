@@ -58,6 +58,7 @@ Task_5:
     * Print the x and y position of the centroid of a detected object, relative to the top left corner of the frame (e.g.- top left is (0,0), bottom right is (w,h)), in pixels.
     * Print the width and height of the detected object, in pixels.
     * Publish these values to a topic called `/bbox` of type `/vision_msgs/BoundingBox2D`. Reference the [message definition source code](https://github.com/ros-perception/vision_msgs/blob/ros2/vision_msgs/msg/BoundingBox2D.msg)
+       * If it's not available, install with `sudo apt install ros-humble-vision-msgs` 
        * You may also do: `ros2 interface show vision_msgs/msg/BoundingBox2D` to see the definition.
        * 'size_x', 'size_y' should be the width and height. 
     * Draw a rectangle (called a bounding box) around the detected object.
