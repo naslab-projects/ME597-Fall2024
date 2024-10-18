@@ -63,30 +63,40 @@ done (d)
     - Power cycle the robot
     - Refer to debugging steps below
 
+3. When you are done using the physical robot, you must deactivate the discovery server settings for ROS2 to work with the simulator. See the instructions below to switch configurations.
+
 ## Switching between Simulator, Robot (Discovery Server), and Robot (Simple Discovery)
 Your environment needs three different configurations for using the simulator and for connecting to the physical robot (in the two network configurations). To change between these, you need to modify your `~/.bashrc`. Below are snippets of what your `~/.bashrc` should look like:
 
-1. To use Simulator:
-    ```
-    source /opt/ros/humble/setup.bash
-    export ROS_LOCALHOST_ONLY=1       # Disables communication with other devices on the network
-    export ROS_DOMAIN_ID=XX           # Your student domain id here
-    ```
-2. To connect to Robot (Simple Discovery):
-    ```
-    source /opt/ros/humble/setup.bash
-    export ROS_LOCALHOST_ONLY=0       # Enables communication with other devices on the network
-    export ROS_DOMAIN_ID=XX           # Your robot domain id here
-    ```
+### 1. To use Simulator:
+```
+source /opt/ros/humble/setup.bash
+export ROS_LOCALHOST_ONLY=1       # Disables communication with other devices on the network
+export ROS_DOMAIN_ID=XX           # Your student domain id here
 
-3. To connect to Robot (Discovery Server):
-    ```
-    source /opt/ros/humble/setup.bash
-    export ROS_LOCALHOST_ONLY=0       # Enables communication with other devices on the network
-    source /etc/turtlebot4_discovery/setup.bash  # Applies configuration specified in step 3B.1 
-    ```
+### Comment out this line if you have it:
+# source /etc/turtlebot4_discovery/setup.bash
+```
 
-3. Remember to open a new terminal each time you switch. You may have to do `ros2 daemon stop; ros2 daemon start`
+### 2. To connect to Robot (Simple Discovery):
+```
+source /opt/ros/humble/setup.bash
+export ROS_LOCALHOST_ONLY=0       # Enables communication with other devices on the network
+export ROS_DOMAIN_ID=XX           # Your robot domain id here
+
+### Comment out this line if you have it:
+# source /etc/turtlebot4_discovery/setup.bash
+```
+
+### 3. To connect to Robot (Discovery Server):
+```
+source /opt/ros/humble/setup.bash
+export ROS_LOCALHOST_ONLY=0       # Enables communication with other devices on the network
+source /etc/turtlebot4_discovery/setup.bash  # Applies configuration specified in step 3B.1 
+```
+
+
+Remember to open a new terminal each time you switch. You may have to do `ros2 daemon stop; ros2 daemon start`
 
 ## Debugging the Turtlebot4 via ssh
 As a last resort: If you have verified connection to wifi, pinged your robot, double checked your configuration, power cycled the robot, and you suspect an issue with the robot, you may use the following to debug:
