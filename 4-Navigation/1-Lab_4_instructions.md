@@ -42,12 +42,12 @@ This week, you will begin by generating a map using SLAM and implementing an A* 
 NOTE: The robot used in this class has a namespace of `/robot`, so when you are launching a file, remember to include the namespace argument, e.g. `ros2 launch task_7 gen_sync_map.launch.py namespace:=/robot`
 
 Using [this](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/generate_map.html) as reference:
-1. Create a ROS 2 `ament_python` package called `task_7`, with two sub-folders: `maps`and `launch`.
+1. Create a ROS 2 `ament_python` package called `task_7`, with two sub-folders: `maps` and `launch`.
 2. Write a launch file called `gen_sync_map_launch.py` which performs the following:
     * Launch the `slam.launch.py` file (which belongs to `turtlebot4_navigation` pkg) from within this launch file to start SLAM.
     * Launch the `view_robot.launch.py` file (which belongs to `turtlebot4_viz` pkg) from within this launch file to view the map in Rviz2.
     * Run the `teleop_twist_keyboard` node (which belongs to `teleop_twist_keyboard` [pkg](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/driving.html)) from within this launch file to teleoperate the TurtleBot4.
-3. Complete the relevant tag details in the `package.xml` file, build and run the ROS 2 node.
+3. Complete the relevant tag details in the `package.xml` file, and build and run the ROS 2 node.
 
 NOTE: If the robot doesn't move as you press the keyboard, you can run this command seperately: `ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/robot/cmd_vel`. The reason why the robot doesn't move is that the message is sent to a topic called `/cmd_vel` instead of `/robot/cmd_vel`, so we use this line of command to change the target topic name. 
 
@@ -81,7 +81,7 @@ You will need these two files in order to implement your own A* algorithm. Go to
 
 You will need to upload this file into [Google Colab](https://colab.research.google.com/) to work with it. Go through the jupyter notebook and implement the A* algorithm for the map obtained during previous tasks with the navigation stack.
 
-Take this opportunity to learn how the BFS, Dijstra and A* algorithms are implemented. 
+Take this opportunity to learn how the BFS, Dijkstra, and A* algorithms are implemented. 
 
 ### Week 9: Navigation, Part I
 In this lab, you will perform navigation in simulation, in preparation for hardware implementation next week.
@@ -100,7 +100,7 @@ The primary focus of this task should be the logic of the path planning and path
 #### Tasks: Simulation (2 hr) (Individual)
 In this part of the lab, we will work with the robot in simulation. This allows you to test functionality before working with the robot in a field environment.
 
-1. Within the `task_7` package, create a Python node called `auto_navigator.py`. We have provided skeleton code to help you get started. The `auto_navigator.py` node must do the following:
+1. Within the `task_7` package, create a Python node called `auto_navigator.py`. We have provided a skeleton code to help you get started. The `auto_navigator.py` node must do the following:
         
     1. Implement the path planning and path following logic to move the TurtleBot4 from position A to B.
     2. Maintain a record of the initial, goal, and current TB4 pose.
@@ -118,8 +118,8 @@ After completing this node,
 
 2. Follow the instructions [here](https://github.com/naslab-projects/sim_ws.git) to use the simulation environment. Note the specific launch instructions in the `src/turtlebot3_gazebo` subdirectory.
 3. Launch the `navigator.launch.py` file (which belongs to `turtlebot3_gazebo` pkg). 
-3. Test the `auto_navigator.py` by pick a [target pose in RVIz](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/navigation.html). Make sure it can generate a path the goal and navigate towards the goal.
-4. Record the `/scan`and `/cmd_vel` topics using rosbag (see Deliverables section at end of document).
+3. Test the `auto_navigator.py` by pick a [target pose in RVIz](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/navigation.html). Ensure it generates a path to the goal and navigates towards it.
+4. Record the `/scan` and `/cmd_vel` topics using rosbag (see Deliverables section at end of document).
 
 ### Week 10: Navigation, Part II
 
