@@ -63,7 +63,15 @@ NOTE: Again, if the saving fails, that would be caused by lack of namespace, so 
 
 #### Part B: Mapping (Software) (10 min) (Individual)
 
-Instructions will be made available by EOD 10/18. Please begin Part C using the provided map files on Brightspace.
+Now we will map in simulation.
+
+1. Follow the instructions [here](https://github.com/naslab-projects/sim_ws.git) to use the simulation environment. Note the specific launch instructions in the `src/turtlebot3_gazebo` subdirectory.
+2. Manually map the `turtlebot3_house` world:
+   * Launch the `mapper.launch.py` file (which belongs to `turtlebot3_gazebo` pkg). 
+   * Run the `teleop_twist_keyboard` node (which belongs to `teleop_twist_keyboard` [pkg](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/driving.html)) from within this launch file to teleoperate the TurtleBot4.
+3. Once you're satisfied with clarity of the generated map, manually [save the map](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/generate_map.html#save-the-map) as `sync_classroom_map`, before killing `mapper.launch.py`. 
+4. Copy and paste the map files to `turtlebot3_gazebo/maps`
+
 
 #### Part C: Path Finding Algorithms (1 hr) (Individual)
 
@@ -108,8 +116,10 @@ Compared to other nodes, `auto_navigator.py` is predicted to have a relatively h
 
 After completing this node, 
 
-2. Further launch and submission instructions will be available soon
-3. Record the `/scan`and `/cmd_vel` topics using rosbag (see Deliverables section at end of document).
+2. Follow the instructions [here](https://github.com/naslab-projects/sim_ws.git) to use the simulation environment. Note the specific launch instructions in the `src/turtlebot3_gazebo` subdirectory.
+3. Launch the `navigator.launch.py` file (which belongs to `turtlebot3_gazebo` pkg). 
+3. Test the `auto_navigator.py` by pick a [target pose in RVIz](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/navigation.html). Make sure it can generate a path the goal and navigate towards the goal.
+4. Record the `/scan`and `/cmd_vel` topics using rosbag (see Deliverables section at end of document).
 
 ### Week 10: Navigation, Part II
 
