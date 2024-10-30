@@ -119,6 +119,7 @@ After completing this node,
 2. Follow the instructions [here](https://github.com/naslab-projects/sim_ws.git) to use the simulation environment. Note the specific launch instructions in the `src/turtlebot3_gazebo` subdirectory.
 3. Launch the `navigator.launch.py` file (which belongs to `turtlebot3_gazebo` pkg). 
 3. Test the `auto_navigator.py` by pick a [target pose in RVIz](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/navigation.html). Ensure it generates a path to the goal and navigates towards it.
+4. Record a video showing your autonomous navigation going to a desired position.
 4. Record the `/scan` and `/cmd_vel` topics using rosbag (see Deliverables section at end of document).
 
 ### Week 10: Navigation, Part II
@@ -196,9 +197,9 @@ Where XX must be replaced with your roll-number.
 
 ### Rubric
 Deviating from the names provided in the lab sheet will result in penalties.
-* 60 pts: `task_7` pkg
-* 05 pts: Week 8, Part B, `ros2 bag` file
+* 45 pts: `task_7` pkg
 * 05 pts: Week 8, Part A, map files
+* 10 pts: Autonomous Navigation Simulation Video
 * 20 pts: Week 8, Part C, completed and commented `*.ipynb` NB
 * 05 pts: Week 9 `ros2 bag` files
-* 05 pts: Week 10, video recording
+* 15 pts: Week 10, Physical Turtlebot Video recording
