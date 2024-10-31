@@ -191,6 +191,8 @@ XX
 |     |__...
 |
 |__log
+|
+|__navigation_astar_f24.ipynb
 ```
 
 Where XX must be replaced with your roll-number.
