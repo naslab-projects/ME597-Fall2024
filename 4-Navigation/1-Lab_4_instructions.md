@@ -132,9 +132,10 @@ You will use the `auto_navigator.py` node from last week (Week 9, Part A, Step 1
 
 1.  Write a launch file called `turtlebot4_navigator.launch.py` which performs the following:
           
-    1. Launch the `nav_bringup.launch.py` file (which belongs to `turtlebot4_navigation` pkg).
-        * This is for localization. 
+    1. Launch the `localization.launch.py` file (which belongs to `turtlebot4_navigation` pkg).
+        * This is for localization.
         * You must also pass the relative path for the `map` parameter, which should be `src/task_7/maps/sync_room_map.yaml`.
+        * For debugging purposes, you can try launching this file on its own with: `ros2 launch turtlebot4_navigation localization.launch.py map:=classroom_map.yaml`
     
     2. Launch the `view_robot.launch.py` file (which belongs to `turtlebot4_viz` pkg).
         * This allows you to view the map in Rviz2.
