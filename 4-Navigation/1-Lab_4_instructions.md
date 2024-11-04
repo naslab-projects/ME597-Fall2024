@@ -128,7 +128,8 @@ Last week, you implemented Turtlebot navigation capabilities in simulation. This
 
 #### Tasks: Hardware (2 hr) (Partnered)
 
-You will use the `auto_navigator.py` node from last week (Week 9, Part A, Step 1). However, this week, you will add it to a launch file to be used to navigate on hardware with the physical robot.
+You will use the `auto_navigator.py` node from last week (Week 9, Part A, Step 1). However, this week, you will add it to a launch file to be used to navigate on hardware with the physical robot. 
+Before writing the launch file create the folder `rviz` in your task_7 ros package and put `robot.rviz` inside. Incudde the `view_robot.launch` file in your launch folder as well.
 
 1.  Write a launch file called `turtlebot4_navigator.launch.py` which performs the following:
           
@@ -137,7 +138,7 @@ You will use the `auto_navigator.py` node from last week (Week 9, Part A, Step 1
         * You must also pass the relative path for the `map` parameter, which should be `src/task_7/maps/sync_room_map.yaml`.
         * For debugging purposes, you can try launching this file on its own with: `ros2 launch turtlebot4_navigation localization.launch.py map:=classroom_map.yaml`
     
-    2. Launch the `view_robot.launch.py` file (which belongs to `turtlebot4_viz` pkg).
+    2. Launch the `view_robot.launch.py` file (which belongs to `task_7` pkg).
         * This allows you to view the map in Rviz2.
     
     3. Run the `auto_navigator` node (which belongs to `task_7` pkg).
