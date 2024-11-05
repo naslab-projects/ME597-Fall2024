@@ -80,9 +80,9 @@ Task_5:
 This week you will control your robot in simulation to follow a red ball.
 ### Test the simulator (10 min):
 1. Re-install sim_ws by following the updated instructions in [2-ROS_2_installation_guide.md](../0-Setup/2-ROS_2_installation_guide.md). You may delete your old sim_ws. For the time being, Mac users will need to use lab computers for robot simulation.
-1. First, try launching the simulator with a red ball.
+2. First, try launching the simulator with a red ball.
 `ros2 launch turtlebot3_gazebo task_5.launch.py`
-1. Next, try controlling the red ball. Use the wasd keys.
+3. Next, try controlling the red ball. Use the wasd keys.
 `ros2 run sim_utils red_ball_controller`
 
 ### Tasks (2 hr)
@@ -96,16 +96,18 @@ This week you will control your robot in simulation to follow a red ball.
     2. Ball is visible and far away: move towards the ball.
     3. Ball is visible and very close: move away from the ball.
     4. Turn to keep the ball in the center of the camera frame.
-5. In your setup.py, give your node the alias `red_ball_tracker`.
+5. You should use a PID controller to control robot motion. Extra credit is available for more sophisticated controllers (see Part D).
+6. In your setup.py, give your node the alias `red_ball_tracker`.
 
 Hint: You should be able to reuse much of your work in Part B for the object detection component of this task.
 
 Note: This part of the lab will be manually graded, so you must submit a video demonstrating the robot in action, in case there are any issues with running your code.
 
 #### Part D (Extra Credit)
-1. Implement more sophisticated logic for better tracking or searching performance (e.g.- PID controller). Better performance will earn up to 20 points extra credit.
+1. Implement more sophisticated logic for better tracking or searching performance. Better performance will earn up to 20 points extra credit.
     * Include a .txt file with a very brief description of any logic you included that you would like to be evaluated for extra credit, titled `extra_credit.txt`. 
     * Include 'extra_credit.txt' in both the video submission and source code submission. 
+    * For extra credit, the search logic must go beyond rotating in place, and control logic must be more sophisticated than a PID controller (or any variant of P, PI, PD, etc.).
 
 If you have completed all the tasks until here, you have done an amazing job! Pat yourself on the back because you have what it takes to become a robotics engineer.
 
