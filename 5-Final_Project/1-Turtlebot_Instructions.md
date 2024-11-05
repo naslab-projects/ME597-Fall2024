@@ -46,7 +46,7 @@ The project gives a total of 100 points for what we call basic tasks. In additio
 * The repository has a package structure that you will use to implement your solutions. You must match the structure outlined below and match the names of the files. Files that you will write are indicated with an arrow. Any folders in the below tree that are not expanded should have the same content as from `sim_ws`.
 
 ```
-final_project/
+turtlebot3_gazebo/
     ├── launch
     ├── maps
         ├── map.pgm                     <-- your files
