@@ -35,7 +35,7 @@ VMWare Workstation Pro (personal use) is the best free Virtual Machine available
 1. Create an account and enter your information.
 1. In the "My Downloads" tab, click "VMware Workstation Pro", then "VMware Workstation Pro xx.x for Personal Use (Windows)" and select a release version.
 1. There will be a blue cloud download icon on the right side of the page. Click this to first verify your information for personal use and then you may use it to download the software.
-1. Go through the VMWare Workstation Pro installation Wizard.
+1. Go through the VMWare Workstation Pro installation Wizard. Set aside at least 30GB of storage for this.
 1. Import the .ova file: `File` --> `Open` --> Find .ova
 1. Select the location to store your virtual machine.
 1. The virtual machine password is `2024`

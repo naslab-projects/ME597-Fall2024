@@ -122,7 +122,7 @@ ros2 bag files:
   * in any directory outside from your workspace directory, run:
     * $`mkdir bag_files`
     * $`cd bag_files`
-    * $`ros2 bag record -o task_3 -a`
+    * $`ros2 bag record -o task_3 /scan /cmd_vel`
   * NOTE: your topic must be alive for ros2 to record it
   * Use this as [reference](https://docs.ros.org/en/galactic/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
 
