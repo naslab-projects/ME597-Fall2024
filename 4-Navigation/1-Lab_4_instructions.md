@@ -46,10 +46,10 @@ Using [this](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/genera
 2. Write a launch file called `gen_sync_map_launch.py` which performs the following:
     * Launch the `slam.launch.py` file (which belongs to `turtlebot4_navigation` pkg) from within this launch file to start SLAM.
     * Launch the `view_robot.launch.py` file (which belongs to `turtlebot4_viz` pkg) from within this launch file to view the map in Rviz2.
-    * Run the `teleop_twist_keyboard` node (which belongs to `teleop_twist_keyboard` [pkg](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/driving.html)) from within this launch file to teleoperate the TurtleBot4.
 3. Complete the relevant tag details in the `package.xml` file, and build and run the ROS 2 node.
 
-NOTE: If the robot doesn't move as you press the keyboard, you can run this command seperately: `ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/robot/cmd_vel`. The reason why the robot doesn't move is that the message is sent to a topic called `/cmd_vel` instead of `/robot/cmd_vel`, so we use this line of command to change the target topic name. 
+In a separate terminal, run the `teleop_twist_keyboard` node to teleoperate the TurtleBot4:
+`ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/robot/cmd_vel`
 
 4. Also verify with these commands:
     * $`ros2 node list`
@@ -58,7 +58,7 @@ NOTE: If the robot doesn't move as you press the keyboard, you can run this comm
     * $`ros2 topic echo <topic_name>`
 5. Once you're satisfied with clarity of the generated map, manually [save the map](https://turtlebot.github.io/turtlebot4-user-manual/tutorials/generate_map.html#save-the-map) as `classroom_map`, before killing `slam.launch.py`.
 
-NOTE: Again, if the saving fails, that would be caused by lack of namespace, so use this command instead: `ros2 run nav2_map_server map_saver_cli -f "map_name" --ros-args -p map_subscribe_transient_local:=true -r __ns:=/namespace`.
+NOTE: Again, if the saving fails, that would be caused by lack of namespace, so use this command instead: `ros2 run nav2_map_server map_saver_cli -f "map_name" --ros-args -p map_subscribe_transient_local:=true -r __ns:=/robot`.
 
 
 #### Part B: Mapping (Software) (10 min) (Individual)
@@ -140,7 +140,7 @@ the following in your `setup.py` under data_files.
           
     1. Launch the `localization.launch.py` file (which belongs to `turtlebot4_navigation` pkg).
         * This is for localization.
-        * You must also pass the relative path for the `map` parameter, which should be `src/task_7/maps/sync_room_map.yaml`.
+        * You must also pass the relative path for the `map` parameter, which should be `src/task_7/maps/classroom_map.yaml`.
         * For debugging purposes, you can try launching this file on its own with: `ros2 launch turtlebot4_navigation localization.launch.py map:=classroom_map.yaml`
     
     2. Launch the `view_robot.launch.py` file (which belongs to `task_7` pkg).
