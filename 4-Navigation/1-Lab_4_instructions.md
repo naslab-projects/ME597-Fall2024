@@ -128,11 +128,12 @@ Last week, you implemented Turtlebot navigation capabilities in simulation. This
 
 #### Tasks: Hardware (2 hr) (Partnered)
 
-You will use the `auto_navigator.py` node from last week (Week 9, Part A, Step 1). However, this week, you will add it to a launch file to be used to navigate on hardware with the physical robot. 
-Before writing the launch file create the folder `rviz` in your task_7 ros package and put `robot.rviz` inside. Incudde the `view_robot.launch` file in your launch folder as well. Make sure to add 
+You will use the [`auto_navigator.py`](/4-Navigation/Resources/auto_navigator.py) node from last week (Week 9, Part A, Step 1). However, this week, you will add it to a launch file to be used to navigate on hardware with the physical robot. 
+Before writing the launch file create the folder `rviz` in your task_7 ros package and put [`robot.rviz`](/4-Navigation/Resources/robot.rviz) inside. Incudde the [`view_robot.launch`](/4-Navigation/Resources/view_robot.launch.py) file in your launch folder as well. Make sure to add 
 the following in your `setup.py` under data_files.
 ```python
-(os.path.join('share', package_name, 'rviz'), glob(os.path.join('rviz', '*')))
+(os.path.join('share', package_name, 'rviz'), glob(os.path.join('rviz', '*'))),
+(os.path.join('share', package_name, 'maps'), glob(os.path.join('maps', '*')))
 ```
 
 
@@ -148,7 +149,8 @@ the following in your `setup.py` under data_files.
     
     3. Run the `auto_navigator` node (which belongs to `task_7` pkg).
         * This starts your path planning and path following algorithm for the TurtleBot4.
-
+    4. [Optional] If you are struggling to get your launch file to work please use this instead: 
+        - [`turtlebot4_navigator.launch.py`](/4-Navigation/Resources/turtlebot4_navigator.launch.py) (can be found in `4-Navigation/Resources`)  
 2. Complete the relevant tag details in the `package.xml` file.
 
 3.  Build and run the ROS 2 node you built.

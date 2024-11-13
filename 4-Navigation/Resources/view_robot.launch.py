@@ -51,8 +51,7 @@ ARGUMENTS = [
 
 
 def generate_launch_description():
-
-    pkg_turtlebot4_viz = get_package_share_directory('turtlebot4_viz')
+    #pkg_turtlebot4_viz = get_package_share_directory('turtlebot4_viz')
     pkg_turtlebot4_description = get_package_share_directory('turtlebot4_description')
     pkg_task7 = get_package_share_directory('task_7')
 
@@ -81,7 +80,7 @@ def generate_launch_description():
         # Delay launch of robot description to allow Rviz2 to load first.
         # Prevents visual bugs in the model.
         TimerAction(
-            period=3.0,
+            period=1.5,
             actions=[
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource([description_launch]),
